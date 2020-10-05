@@ -1,0 +1,123 @@
+" based on https://gist.github.com/dewaka/ef947e52767bf453eaf77c852051eb7e
+" Intellij actions labels https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources-en/src/messages/ActionsBundle.properties
+" Intellij default mapping https://github.com/JetBrains/intellij-community/blob/fcced972f64e590741b89f1b9071c99462001564/platform/platform-resources/src/keymaps/%24default.xml
+
+set 'showmode'
+
+let mapleader = " "
+
+" Escape
+inoremap jj <Esc>
+inoremap jl <Esc>:action EditorCompleteStatement<cr>
+inoremap jk <Esc>o
+inoremap jv <Esc>:action IntroduceVariable<cr>
+
+" Navigation
+nmap <leader>h :action Back<cr>
+nmap <leader>l :action Forward<cr>
+nmap <leader>L :action RecentLocations<cr>
+nmap <leader><leader> :action GotoDeclaration<cr>
+vmap <leader><leader> :action GotoDeclaration<cr>
+nmap <leader>u :action FindUsages<cr>
+nmap <leader>f :action GotoFile<cr>
+nmap <leader>c :action GotoClass<cr>
+nmap <leader>C :action CloseContent<cr>
+nmap <leader>s :action GotoSymbol<cr>
+nmap <leader>a :action GotoAction<cr>
+nmap <leader>; :action FileStructurePopup<cr>
+nmap <leader>M :action ActivateStructureToolWindow<cr>
+nmap <leader>p :action ActivateProjectToolWindow<cr>
+nmap <leader>F :action ActivateFavoritesToolWindow<cr>
+nmap <leader>d :action ShowErrorDescription<cr>
+nmap <leader>i :action QuickImplementations<cr>
+nmap <leader>I :action GotoImplementation<cr>
+" nmap <leader>I :action SelectIn<cr>
+nmap <leader>e :action RecentFiles<cr>
+nmap <leader>t :action GotoTest<cr>
+" nmap <leader>p :action JumpToLastWindow<cr>
+nmap <leader>b :action ShowBookmarks<cr>
+nmap <leader>q :action HideAllWindows<cr>
+nmap <leader>, :action ShowPopupMenu<cr>
+nmap <leader>n :action ShowNavBar<cr>
+nmap <leader><cr> :action ShowIntentionActions<cr>
+" nmap <leader>- :action CollapseAll<cr>
+" nmap <leader>= :action ExpandAll<cr>
+
+
+" To navigate between split panes
+nmap <leader>wo :action NextSplitter<cr>
+nmap <leader>wp :action PrevSplitter<cr>
+nmap <leader>ww :action PrevSplitter<cr>
+
+" Splits manipulation
+nmap <leader>ws :action SplitHorizontally<cr>
+nmap <leader>wv :action SplitVertically<cr>
+nmap <leader>wc :action Unsplit<cr>
+nmap <leader>wC :action UnsplitAll<cr>
+nmap <leader>wd :action OpenEditorInOppositeTabGroup<cr>
+
+
+
+" Terminal
+nmap <leader>T :action ActivateTerminalToolWindow<cr>
+
+" Search
+nmap <leader>/ :action Find<cr>
+vmap <leader>/ :action Find<cr>
+nmap <leader>\ :action FindInPath<cr>
+vmap <leader>\ :action FindInPath<cr>
+
+
+nmap <leader>j :action MethodUp<cr>
+nmap <leader>k :action MethodDown<cr>
+
+" Errors
+nmap <leader>x :action GotoNextError<cr>
+nmap <leader>X :action GotoPreviousError<cr>
+
+
+" Refactorings
+vmap T :action Refactorings.QuickListPopupAction<cr>
+nmap <leader>rr :action RenameElement<cr>
+nmap <leader>rg :action Generate<cr>
+nmap <leader>ri :action OptimizeImports<cr>
+nmap <leader>rv :action IntroduceVariable<cr>
+vmap <leader>rv :action IntroduceVariable<cr>
+nmap <leader>rp :action IntroduceParameter<cr>
+nmap <leader>rc :action IntroduceConstant<cr>
+nmap <leader>rf :action IntroduceField<cr>
+nmap <leader>rm :action ExtractMethod<cr>
+vmap <leader>rm :action ExtractMethod<cr>
+nmap <leader>rM :action Move<cr>
+nmap <leader>rl :action ReformatCode<cr>
+nmap <leader>rs :action ChangeSignature<cr>
+
+
+" Building, Running and Debugging
+nmap ,r :action Run<cr>
+nmap ,R :action RunAnything<cr>
+nmap ,a :action ChooseRunConfiguration<cr>
+nmap ,e :action editRunConfigurations<cr>
+nmap ,s :action ActivateServicesToolWindow<cr>
+nmap ,S :action Stop<cr>
+nmap ,b :action Debug<cr>
+nmap ,c :action RunClass<cr>
+nmap ,d :action DebugClass<cr>
+nmap ,t :action RerunTests<cr>
+nmap ,T :action RerunFailedTests<cr>
+nmap ,x :action XDebugger.MuteBreakpoints<cr>
+
+
+" VCS operations
+nmap <leader>yy :action Git.Branches<cr>
+nmap <leader>yc :action Vcs.Show.Local.Changes<cr>
+nmap <leader>yp :action Vcs.QuickListPopupAction<cr>
+nmap <leader>yP :action Vcs.Push<cr>
+nmap <leader>yu :action Git.Pull<cr>
+nmap <leader>yf :action Git.Fetch<cr>
+nmap <leader>ya :action Annotate<cr>
+nmap <leader>yl :action Vcs.Show.Log<cr>
+nmap <leader>yd :action Git.CompareWithBranch<cr>
+nmap <leader>yz :action Vcs.RollbackChangedLines<cr>
+nmap <leader>yj :action VcsShowNextChangeMarker<cr>
+nmap <leader>yk :action VcsShowPrevChangeMarker<cr>
